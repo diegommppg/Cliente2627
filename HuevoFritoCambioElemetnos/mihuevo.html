@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huevos</title>
+    <link rel="stylesheet" href="huevos.css">
+</head>
+<body class="pagina-huevos">
+    <main class="contenedor-principal">
+        <header class="cabecera">
+            <span class="sello-cocina">Recetario</span>
+            <h1 id="titulo-principal">Mis huevos</h1>
+            <span class="detalle-cabecera" aria-hidden="true"></span>
+        </header>
+
+        <section class="introduccion" aria-labelledby="subtitulo-preparaciones">
+            <h2 id="subtitulo-preparaciones">Maneras de preparar mis huevos</h2>
+            <p>Las maneras de preparar mis huevos son las siguentes:</p>
+        </section>
+
+        <ul class="lista-preparaciones">
+            <li class="preparacion preparacion--frito">
+                <img src="img/huevo-frito.jpg" alt="Huevo frito">
+                <span>Huevo frito</span>
+            </li>
+            <li class="preparacion preparacion--revuelto">
+                <img src="img/huevo-revuelto.jpg" alt="Huevo revuelto">
+                <span>Huevo revuelto</span>
+            </li>
+            <li class="preparacion preparacion--duro">
+                <img src="img/huevo-cocido.jpg" alt="Huevo duro">
+                <span>Huevo duro</span>
+            </li>
+            <li class="preparacion preparacion--escalfado">
+                <img src="img/huevo-escalfado.jpg" alt="Huevo escalfado">
+                <span>Huevo escalfado</span>
+            </li>
+        </ul>
+
+
+
+
+
+        <h1>Mi opción preferida</h1>
+        <button id="boton-cambiar" onclick="cambiarHuevo()">Cambiar opción</button>
+        <img id="opcion-favorita" src="img/huevo-frito.jpg" alt="Huevo frito" class="huevo-frito">
+    </main>
+
+    <script src="milogicahuevera.js"></script>
+</body>
+</html>

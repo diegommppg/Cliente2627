@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+    --bg: #070711;
+    --text: #f7f7ff;
+    --muted: #a7a7bd;
+    --purple: #8b5cf6;
+    --blue: #38bdf8;
+    --pink: #ec4899;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 50% 45%,
+            rgba(139, 92, 246, 0.18),
+            transparent 28%),
+        radial-gradient(circle at 20% 20%,
+            rgba(56, 189, 248, 0.12),
+            transparent 30%),
+        radial-gradient(circle at 80% 80%,
+            rgba(236, 72, 153, 0.12),
+            transparent 30%),
+        var(--bg);
+
+    overflow: hidden;
+    position: relative;
+}
+
+/* Aura ambiental */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite alternate;
+}
+
+body::before {
+    background: var(--purple);
+    top: -180px;
+    left: -120px;
+}
+
+body::after {
+    background: var(--blue);
+    right: -150px;
+    bottom: -180px;
+    animation-delay: -4s;
+}
+
+h1 {
+    position: relative;
+    z-index: 1;
+
+    font-size: clamp(3rem, 9vw, 7rem);
+    font-weight: 800;
+    letter-spacing: -0.07em;
+    line-height: 1;
+
+    background: linear-gradient(
+        120deg,
+        #ffffff 10%,
+        #c4b5fd 45%,
+        #67e8f9 75%,
+        #ffffff 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    filter:
+        drop-shadow(0 0 12px rgba(139, 92, 246, 0.5))
+        drop-shadow(0 0 40px rgba(56, 189, 248, 0.2));
+
+    animation: aura 4s ease-in-out infinite;
+}
+
+p {
+    position: relative;
+    z-index: 1;
+
+    max-width: 520px;
+    padding: 16px 24px;
+
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 999px;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+p:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.4);
+
+    box-shadow:
+        0 15px 50px rgba(139, 92, 246, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+@keyframes aura {
+    0%, 100% {
+        filter:
+            drop-shadow(0 0 12px rgba(139, 92, 246, 0.5))
+            drop-shadow(0 0 35px rgba(56, 189, 248, 0.15));
+    }
+
+    50% {
+        filter:
+            drop-shadow(0 0 20px rgba(139, 92, 246, 0.8))
+            drop-shadow(0 0 60px rgba(56, 189, 248, 0.3));
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(40px, 30px) scale(1.15);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px;
+    }
+
+    p {
+        border-radius: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

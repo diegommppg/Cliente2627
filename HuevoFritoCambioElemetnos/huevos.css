@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --fondo: #f6efe2;
+    --superficie: #fffdf8;
+    --tinta: #30261f;
+    --tinta-suave: #76695e;
+    --amarillo: #f4bf3b;
+    --amarillo-claro: #fff0b5;
+    --borde: #eadfce;
+    --sombra: 0 22px 55px rgba(76, 53, 30, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--tinta);
+    font-family: 'DM Sans', sans-serif;
+    background:
+        radial-gradient(circle at 12% 15%, rgba(244, 191, 59, 0.22) 0 4px, transparent 5px),
+        radial-gradient(circle at 86% 80%, rgba(223, 119, 71, 0.12) 0 3px, transparent 4px),
+        var(--fondo);
+    background-size: 34px 34px, 46px 46px, auto;
+}
+
+.contenedor-principal {
+    width: min(100% - 32px, 860px);
+    margin: 0 auto;
+    padding: 72px 0 88px;
+}
+
+.cabecera {
+    position: relative;
+    padding: 48px clamp(24px, 8vw, 84px) 54px;
+    overflow: hidden;
+    border-radius: 28px 28px 8px 8px;
+    color: #fffaf0;
+    background: #3b2d24;
+    box-shadow: var(--sombra);
+}
+
+.cabecera::before,
+.cabecera::after {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.cabecera::before {
+    width: 240px;
+    height: 240px;
+    right: -72px;
+    top: -110px;
+    background: var(--amarillo);
+}
+
+.cabecera::after {
+    width: 130px;
+    height: 130px;
+    right: 70px;
+    bottom: -84px;
+    background: #df7747;
+}
+
+.sello-cocina {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--amarillo);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+#titulo-principal {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3rem, 8vw, 5.4rem);
+    line-height: 0.95;
+    letter-spacing: 0;
+}
+
+.detalle-cabecera {
+    position: absolute;
+    right: 18%;
+    bottom: 34px;
+    width: 26px;
+    height: 26px;
+    border: 7px solid var(--amarillo-claro);
+    border-radius: 50%;
+    background: var(--amarillo);
+}
+
+.introduccion {
+    padding: 46px clamp(24px, 8vw, 84px) 28px;
+}
+
+#subtitulo-preparaciones {
+    margin: 0 0 12px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.45rem);
+    line-height: 1.1;
+}
+
+.introduccion p {
+    margin: 0;
+    color: var(--tinta-suave);
+    font-size: 1.05rem;
+}
+
+.lista-preparaciones {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 10px clamp(24px, 8vw, 84px) 0;
+    list-style: none;
+}
+
+.preparacion {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 270px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    background: var(--superficie);
+    box-shadow: 0 8px 18px rgba(76, 53, 30, 0.05);
+    font-size: 1.05rem;
+    font-weight: 700;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.preparacion img {
+    display: block;
+    width: 100%;
+    height: 208px;
+    object-fit: cover;
+}
+
+.preparacion span {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 18px 20px;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.preparacion:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 25px rgba(76, 53, 30, 0.12);
+}
+
+@media (max-width: 620px) {
+    .contenedor-principal {
+        width: min(100% - 20px, 860px);
+        padding-top: 28px;
+    }
+
+    .cabecera {
+        padding-top: 38px;
+        padding-bottom: 44px;
+        border-radius: 22px 22px 6px 6px;
+    }
+
+    .introduccion {
+        padding-top: 34px;
+    }
+
+    .lista-preparaciones {
+        grid-template-columns: 1fr;
+    }
+
+    .preparacion {
+        min-height: 250px;
+    }
+
+    .preparacion img {
+        height: 190px;
+    }
+}
