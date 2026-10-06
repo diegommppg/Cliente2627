@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Cutre</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #12001f, #2b004f);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+    }
+
+    .calculator {
+      display: grid;
+      grid-template-columns: repeat(4, 80px);
+      grid-gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+    }
+
+    #display {
+      grid-column: span 4;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-size: 2.6rem;
+      text-align: right;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.08);
+      margin-bottom: 10px;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+
+    button {
+      background: linear-gradient(145deg, #6a00f4, #9d4edd);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.3rem;
+      padding: 15px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    button:hover {
+      background: linear-gradient(145deg, #b5179e, #f72585);
+      box-shadow: 0 0 15px rgba(247, 37, 133, 0.6);
+      transform: translateY(-3px);
+    }
+
+    button:active {
+      transform: translateY(1px);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Botón "=" más llamativo */
+    button:nth-last-child(1) {
+      background: linear-gradient(145deg, #7b2cbf, #f72585);
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(247, 37, 133, 0.6);
+    }
+
+    button:nth-last-child(1):hover {
+      background: linear-gradient(145deg, #f72585, #b5179e);
+      box-shadow: 0 0 20px rgba(247, 37, 133, 0.8);
+    }
+
+    /* Botón "C" con color de advertencia */
+    button:first-child {
+      background: linear-gradient(145deg, #ff006e, #ff477e);
+    }
+
+    button:first-child:hover {
+      background: linear-gradient(145deg, #ff477e, #ff85a1);
+      box-shadow: 0 0 15px rgba(255, 71, 126, 0.7);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="calculator">
+
+    <div id="display">0</div>
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="agregarCifra('(')">(</button>
+    <button onclick="agregarCifra(')')">)</button>
+    <button onclick="agregarCifra('/')">/</button>
+    <button onclick="agregarCifra('7')">7</button>
+    <button onclick="agregarCifra('8')">8</button>
+    <button onclick="agregarCifra('9')">9</button>
+    <button onclick="agregarCifra('*')">*</button>
+    <button onclick="agregarCifra('4')">4</button>
+    <button onclick="agregarCifra('5')">5</button>
+    <button onclick="agregarCifra('6')">6</button>
+    <button onclick="agregarCifra('-') "-></button>
+    <button onclick="agregarCifra('1')">1</button>
+    <button onclick="agregarCifra('2')">2</button>
+    <button onclick="agregarCifra('3')">3</button>
+    <button onclick="agregarCifra('+')">+</button>
+    <button onclick="agregarCifra('0')">0</button>
+    <button>.</button>
+    <button id="botonIgual">=</button>
+  </div>
+  <script src="calculadora2.js"></script>
+</body>
+
+</html>

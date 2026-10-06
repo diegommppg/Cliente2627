@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Righteous&display=swap');
+
+:root {
+    color-scheme: light;
+    --ink: #25213b;
+    --tomato: #f04452;
+    --blue: #2563d9;
+    --lemon: #ffe34f;
+    --cream: #fff9e8;
+    --mint: #42c8a2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 58px 24px 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    color: var(--ink);
+    text-align: center;
+    font-family: 'Fredoka', 'Trebuchet MS', sans-serif;
+    background-color: var(--lemon);
+    background-image:
+        radial-gradient(circle, rgba(37, 99, 217, 0.2) 2px, transparent 2.5px),
+        repeating-linear-gradient(135deg, transparent 0 34px, rgba(240, 68, 82, 0.09) 34px 39px, transparent 39px 68px);
+    background-size: 28px 28px, auto;
+}
+
+body::before,
+body::after {
+    position: fixed;
+    z-index: -1;
+    color: var(--tomato);
+    font-family: 'Righteous', Impact, sans-serif;
+    line-height: 1;
+    pointer-events: none;
+    text-shadow: 4px 4px 0 var(--blue);
+}
+
+body::before {
+    content: 'OLE!';
+    top: 8vh;
+    left: 5vw;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    transform: rotate(-12deg);
+}
+
+body::after {
+    content: 'MMMM!';
+    right: 4vw;
+    bottom: 7vh;
+    font-size: clamp(2rem, 6vw, 5rem);
+    transform: rotate(10deg);
+}
+
+h1 {
+    position: relative;
+    margin: 0 0 12px;
+    color: var(--tomato);
+    font-family: 'Righteous', Impact, sans-serif;
+    font-size: clamp(3.2rem, 10vw, 7.5rem);
+    line-height: 0.95;
+    text-shadow: 5px 5px 0 var(--ink), 9px 9px 0 var(--mint);
+    transform: rotate(-3deg);
+    animation: tortilla-pop 650ms cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+
+h1::before,
+h1::after {
+    position: absolute;
+    color: var(--blue);
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.34em;
+    text-shadow: 2px 2px 0 var(--cream);
+}
+
+h1::before {
+    content: '¡';
+    top: 0;
+    left: -0.55em;
+    transform: rotate(-18deg);
+}
+
+h1::after {
+    content: '!';
+    top: -0.12em;
+    right: -0.4em;
+    transform: rotate(16deg);
+}
+
+p {
+    margin: 18px 0 25px;
+    padding: 10px 20px;
+    color: var(--ink);
+    font-size: clamp(1.1rem, 3vw, 1.55rem);
+    font-weight: 600;
+    background: var(--cream);
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 4px 4px 0 var(--tomato);
+    transform: rotate(1deg);
+}
+
+button {
+    position: relative;
+    padding: 15px 28px;
+    color: white;
+    font: 700 1.2rem 'Fredoka', 'Trebuchet MS', sans-serif;
+    background: var(--blue);
+    border: 3px solid var(--ink);
+    border-radius: 16px 6px 16px 6px;
+    box-shadow: 6px 6px 0 var(--ink);
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+button::before {
+    content: '★';
+    margin-right: 10px;
+    color: var(--lemon);
+}
+
+button:hover {
+    background: var(--tomato);
+    box-shadow: 3px 3px 0 var(--ink);
+    transform: translate(3px, 3px) rotate(-2deg);
+}
+
+button:active {
+    box-shadow: 0 0 0 var(--ink);
+    transform: translate(6px, 6px) scale(0.98);
+}
+
+button:focus-visible {
+    outline: 4px dashed var(--tomato);
+    outline-offset: 7px;
+}
+
+img {
+    display: block;
+    width: min(600px, 100%);
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    margin-top: 28px;
+    border: 10px solid var(--cream);
+    border-radius: 30px 12px 30px 12px;
+    box-shadow: 10px 10px 0 var(--tomato), 16px 16px 0 var(--ink);
+    transform: rotate(1.5deg);
+    animation: tortilla-pop 850ms 120ms cubic-bezier(0.2, 1.35, 0.4, 1) both;
+}
+
+@keyframes tortilla-pop {
+    from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.88) rotate(-5deg);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 50px 22px 62px;
+    }
+
+    body::before {
+        top: 16px;
+        left: 12px;
+        font-size: 2rem;
+    }
+
+    body::after {
+        right: 10px;
+        bottom: 14px;
+        font-size: 1.8rem;
+    }
+
+    p {
+        max-width: 100%;
+        border-radius: 18px;
+    }
+
+    button {
+        max-width: 100%;
+        padding: 13px 18px;
+        font-size: 1.05rem;
+    }
+
+    img {
+        border-width: 7px;
+        border-radius: 22px 9px 22px 9px;
+        box-shadow: 7px 7px 0 var(--tomato), 11px 11px 0 var(--ink);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
