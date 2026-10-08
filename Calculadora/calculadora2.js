@@ -13,3 +13,20 @@ function clearDisplay(){
     operacion = "";
     updateDisplay();
 }
+
+document.getElementById("botonIgual").addEventListener("click", calcular);
+
+/*
+document.getElementById("botonIgual").addEventListener("click", () => {
+    let resultado = eval(operacion);
+    operacion = resultado.toString();
+    document.getElementById("display").innerHTML = resultado;
+});*/
+
+
+function calcular(){
+    let resultado = eval(operacion);
+    operacion = resultado.toString();
+    document.getElementById("display").innerHTML = resultado;
+}
+
