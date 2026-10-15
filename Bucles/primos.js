@@ -12,13 +12,39 @@ function esPrimo(numPrimo){
             multiplo++;
         }
     }
-
     if(multiplo == 2){
-        console.log("Es primo");
+        return true;
     }
     else{
-        console.log("No es primo");
+        return false;
     }
 }
 
-esPrimo(num);
+function esPrimoMejorado(numPrimo){
+    for(let i=2; i<numPrimo; i++){
+        if(numPrimo % i === 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+function esPrimoMejorado2(numPrimo){
+    for(let i=2; i<=Math.sqrt(numPrimo); i++){
+        if(numPrimo % i === 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+function calcularPrimos(num){
+    for(let i=1; i<=num; i++){
+        if(esPrimoMejorado2(i)){
+            console.log("El numero " + i + " es primo");
+        }
+    }
+}
+
+calcularPrimos(num);
