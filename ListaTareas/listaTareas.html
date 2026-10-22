@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f1ff">
+    <title>Mis tareas</title>
+    <link rel="stylesheet" href="listaTareas.css">
+</head>
+<body>
+    <main class="task-app">
+        <header class="task-header">
+            <span class="eyebrow">UN PASO A LA VEZ</span>
+            <h1>Mis tareas<span class="title-sparkle" aria-hidden="true">✦</span></h1>
+            <p>Organiza tu día y celebra cada pequeño logro.</p>
+        </header>
+
+        <section class="task-section" aria-label="Lista de tareas">
+            <div class="task-options">
+                <label for="selectPrioridad">Prioridad</label>
+                <select id="selectPrioridad">
+                    <option value="urgente">Urgente</option>
+                    <option value="intermedia">Intermedia</option>
+                    <option value="baja">Baja</option>
+                </select>
+            </div>
+
+            <div class="task-entry">
+                <label class="visually-hidden" for="inputTarea">Escribe una tarea</label>
+                <input id="inputTarea" type="text" placeholder="¿Qué tienes en mente?" autocomplete="off">
+                <button class="button button-primary" type="button" onclick="agregarTarea()">Añadir tarea <span aria-hidden="true">+</span></button>
+            </div>
+
+            <ul id="listaTareas" class="task-list" aria-live="polite"></ul>
+
+            <div class="list-footer">
+                <span class="list-hint"><span class="hint-dot" aria-hidden="true"></span> Tu lista, a tu manera</span>
+                <button class="button button-remove" type="button" onclick="eliminarTarea()">Eliminar última</button>
+            </div>
+        </section>
+    </main>
+    <script src="listaTareas.js"></script>
+</body>
+</html>
