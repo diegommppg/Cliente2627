@@ -55,9 +55,10 @@ function comprobarValidez() {
     let passwordInput = document.getElementById("password");
 
     let expresionPass = "^[A-Za-z0-9$*+]{8,15}$";
+    let expresionCorreo = "^([a-z][a-zA-Z0-9]{4,15}@(gmail|hotmail)\.com)$";
     let expresionUrl="";
 
-    let varRegex = new RegExp(expresionPass);
+    let varRegex = new RegExp(expresionCorreo);
     
     if(varRegex.test(passwordInput.value)){
         //alert("Contraseña válida");
