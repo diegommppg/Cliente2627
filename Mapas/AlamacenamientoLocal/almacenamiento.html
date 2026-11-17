@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage</title>
+</head>
+<body>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+    <button onclick="guardarLocalStorage()">Guardar</button>
+    <button onclick="recuperarLocalStorage()">Recuperar</button>
+    <button onclick="eliminarLocalStorage()">Eliminar</button>
+
+    <button onclick="guardarCookies()">Guardar cookies</button>
+    <button onclick="recuperarCookies()">Recuperar cookies</button>
+    <p id="resultadoCookies"></p>
+
+    <script src="almacenamiento.js"></script>
+</body>
+</html>
